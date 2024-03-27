@@ -1,0 +1,9 @@
+<article>
+      <h2>{`${user.first_name} ${user.last_name}`}</h2>
+      <ul>
+        <li><span>Email</span><span>{user.email}</span></li>
+        <li><span>Birthday</span><span>{user.birthday}</span></li>
+      </ul>
+      <button class="card-btn" onClick={handleDelete}>Delete</button>
+      <button class="card-btn"onClick={handleEdit}>Edit</button>
+    </article>

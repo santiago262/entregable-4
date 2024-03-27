@@ -1,0 +1,43 @@
+body {
+  
+min-height: 100vh;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+  }
+
+  body {
+  
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+      }
+    
+    .nav{
+     
+      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    
+    }
+    .nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .nav li{
+      height: 50px;
+    }
+    .nav .button-register{
+    height: 100%;
+      padding: 0 30px;
+      display: flex;
+      border-radius:10px;
+      
+    }
+    .button-register{
+      background-color: white;
+      align-items: center;
+      
+    }
