@@ -5,6 +5,7 @@ export default function useCurd(BASEURL) {
   const getApi=(path)=>{
     const url=`${BASEURL}${path}`
     axios.get(url).then((res) => {
+      console.log(res.data)
     setResponse(res.data)
 
 }).catch(err => console.log(err))
@@ -23,11 +24,25 @@ export default function useCurd(BASEURL) {
         setResponse(response.filter(e=>e.id !==id))
     })
   }
-  const updateApi=(path,id,data)=>{
-    const url=`${BASEURL}${path}${id}/`
-    axios.patch(url,data).then(res=>{
-        setResponse(response.map((e)=>e.id=== id?res.data:e))
-    }).catch(err=>console.log(err))
-  }
+  const updateApi = (path, id, data) => {
+    const url = `${BASEURL}${path}${id}/`;
+    console.log(url)
+    axios.put(url, data)
+        .then(res => {
+            // Actualiza la respuesta solo si la solicitud fue exitosa
+            setResponse(prevResponse => {
+                // Mapea sobre la respuesta anterior y actualiza solo el elemento correspondiente
+                return prevResponse.map(item => {
+                    if (item.id === id) {
+                        // Combina los datos antiguos con los nuevos
+                        return { ...item, ...res.data };
+                    }
+                    return item;
+                });
+            });
+        })
+        .catch(err => console.log(err));
+};
+
 return [response,getApi,postApi,deleteApi,updateApi]
 }

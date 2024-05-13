@@ -3,12 +3,14 @@ import {useForm} from "react-hook-form"
 export default function FormUser({setUserEdit,updateUser,postUser,userEdit,handleClose}) {
     const {handleSubmit ,register,reset} = useForm()
     const submit=(data)=>{
-      if(userEdit){updateUser("/users/",data.id,data)
+      if(userEdit){
+      console.log(data.id)
+      updateUser("/user/", data.id , data)
       setUserEdit()
       handleClose()
-
-      
-      }else{postUser("/users/",data)}
+      }else{
+      postUser("/user/",data)
+      }
         
         reset({
             email: '',

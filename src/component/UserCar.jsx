@@ -11,7 +11,7 @@ export default function UserCard({ setUserEdit, deleteUser, user, handleShow }) 
   const handleConfirmDelete = () => {
   
     setShowDelete(false);
-    deleteUser("/users/", user.id);
+    deleteUser("/user/", user.id);
     
   };
 

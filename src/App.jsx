@@ -7,7 +7,7 @@ import ButtonRegister from './component/ButtonRegister';
 
 
 function App() {
-  const BASEURL = "https://users-crud.academlo.tech";
+  const BASEURL = "https://entregable-node-js-2.onrender.com/users/v1";
   const [users, getUser, postUser, deleteUser, updateUser] = useCurd(BASEURL);
   const [userEdit, setUserEdit] = useState(null);
   const [show, setShow] = useState(false);
@@ -16,7 +16,7 @@ function App() {
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    getUser("/users/");
+    getUser("/user/");
   }, []);
 
   return (
